@@ -7,23 +7,29 @@
   </div>
 </div>
 <h2 class="clearfix">Your Request to {{company.name}}</h2>
-<div class="btn btn-lg marb10 generatorBtn" ng-class="{disabled:letter.isGenerating, 'btn-success':letter.isGenerated, 'btn-primary': !letter.isGenerated}" ng-click="save()" ng-enter="save()" tabindex="1">
-<span ui-ladda="letter.isGenerating" class="ladda-button" data-style="zoom-in">
-  <span class="glyphicon glyphicon-save"></span> 
-</span><span ng-show="!letter.isGenerating && !letter.isGenerated">
-   &nbsp;Generate Letter (PDF)
-  </span>
-  <span ng-show="letter.isGenerating && !letter.isGenerated">
-    &nbsp;Please Wait
-  </span>
-  <span ng-show="!letter.isGenerating && letter.isGenerated">
-    &nbsp;Re-save Letter
-  </span>
+<div class="clearfix row">
+  <div class="col-xs-12 col-sm-5 marb-xs-5">
+    <div class="btn btn-lg marb10 marb-xs-5 btn-block generatorBtn" ng-class="{disabled:letter.isGenerating, 'btn-success':letter.isGenerated, 'btn-primary': !letter.isGenerated}" ng-click="save()" ng-enter="save()" tabindex="1">
+      <span ui-ladda="letter.isGenerating" class="ladda-button" data-style="zoom-in">
+        <span class="glyphicon glyphicon-save"></span> 
+      </span><span ng-show="!letter.isGenerating && !letter.isGenerated">
+         &nbsp;Generate Letter (PDF)
+        </span>
+        <span ng-show="letter.isGenerating && !letter.isGenerated">
+          &nbsp;Please Wait
+        </span>
+        <span ng-show="!letter.isGenerating && letter.isGenerated">
+          &nbsp;Re-save Letter
+        </span>
+      </div>
+  </div>
+  <div class="col-xs-12 col-sm-offset-4 col-sm-3 marb-xs-5">
+    <a class="btn marb10 btn-default btn-block" ng-class="{disabled: !company.email}" ng-href="{{email}}" tabindex="1">
+      <span class="glyphicon glyphicon-send"></span>&nbsp;Email Request
+    </a>
+  </div>
 </div>
 
-<a class="btn marb10 btn-default" ng-class="{disabled: !company.email}" ng-href="{{email}}" tabindex="1">
-  <span class="glyphicon glyphicon-send"></span>&nbsp;Email Request
-</a>
 <div class="marb10 bg-warning" ng-if="!company.email" style="border-radius:0; padding:7px">No email listed for company privacy officer.</div>
 <div class="marb10 bg-info" ng-if="company.email" style="border-radius:0; padding:7px">If email button fails, copy text below and send to: {{company.email}}</div>
 
