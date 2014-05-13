@@ -47,17 +47,25 @@
       </div>
     </div>
     <div class="row">
-      <div class="form-group col-sm-6">
-        <label for="service.account.email">Account Email Address</label>
+      <label class="col-sm-6" for="service.account.email">Account Email Address</label>
+    </div>
+    <div class="row">
+      <div class="form-group marb-xs-2 col-sm-6">
         <input class="form-control" name="service.account.email" ng-model="service.account.email" tabindex="1">
-        <span class="btn btn-info" ng-if="!$first" ng-click="service.setFirstEmail()">Same as before</span>
+      </div>
+      <div class="col-sm-6 marb-xs-10">
+        <span class="btn btn-info btn-sm" ng-if="!$first" ng-click="service.setFirstEmail()"><span class="glyphicon glyphicon-repeat"></span> Same as first</span>
       </div>
     </div>
     <div class="row">
-      <div class="form-group col-sm-6">
-        <label for="service.account.phone">Account Phone Number</label>
+      <label class="col-sm-6" for="service.account.phone">Account Phone Number</label>
+    </div>
+    <div class="row">
+      <div class="form-group marb-xs-2 col-sm-6">
         <input class="form-control" name="service.account.phone" ng-model="service.account.phone" tabindex="1">
-        <span class="btn btn-info" ng-if="!$first" ng-click="service.setFirstPhone()">Same as before</span>
+      </div>
+      <div class="col-sm-6 marb-xs-10">
+        <span class="btn btn-info btn-sm" ng-if="!$first" ng-click="service.setFirstPhone()"><span class="glyphicon glyphicon-repeat"></span> Same as first</span>
       </div>
     </div>
   </div>
