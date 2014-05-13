@@ -1,9 +1,13 @@
-<div class="clearfix">
-<div class="btn btn-default pull-left" tabindex="3" ng-enter="previous()" ng-click="previous()"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Back to Account Details</div>
-<div ng-click="startOver()" tabindex="2" ng-enter="startOver()" class="btn btn-info pull-right"><span class="glyphicon glyphicon-flag"></span>&nbsp;Request From Another Company</div>
+<div class="clearfix row">
+  <div class="col-xs-12 col-sm-4 marb-xs-5">
+    <div class="btn btn-default btn-block" tabindex="3" ng-enter="previous()" ng-click="previous()"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Back to Account Details</div>
+  </div>
+  <div class="col-xs-12 col-sm-offset-3 col-sm-5 marb-xs-5">
+    <div ng-click="startOver()" tabindex="2" ng-enter="startOver()" class="btn btn-info pull-right btn-block"><span class="glyphicon glyphicon-flag"></span>&nbsp;Request From Another Company</div>
+  </div>
 </div>
 <h2 class="clearfix">Your Request to {{company.name}}</h2>
-<div class="btn marb10 generatorBtn" ng-class="{disabled:letter.isGenerating, 'btn-success':letter.isGenerated, 'btn-primary': !letter.isGenerated}" ng-click="save()" ng-enter="save()" tabindex="1">
+<div class="btn btn-lg marb10 generatorBtn" ng-class="{disabled:letter.isGenerating, 'btn-success':letter.isGenerated, 'btn-primary': !letter.isGenerated}" ng-click="save()" ng-enter="save()" tabindex="1">
 <span ui-ladda="letter.isGenerating" class="ladda-button" data-style="zoom-in">
   <span class="glyphicon glyphicon-save"></span> 
 </span><span ng-show="!letter.isGenerating && !letter.isGenerated">
