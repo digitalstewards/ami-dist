@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/2d46391d.vendor.css">
-    <link rel="stylesheet" href="styles/135e8e09.main.css">
+    <link rel="stylesheet" href="styles/09107ea1.main.css">
   
   <body ng-app="pirsApp">
     <!--[if lt IE 7]>
@@ -18,9 +18,21 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <div ng-controller="NoticeCtrl" ng-show="active">
+        <div style="padding-top:54px"></div>
+        <div class="navbar navbar-fixed-top sticky-notice">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-12 bg-success padt10 padb10">
+                  <strong style="font-size:1.7em">All Done?</strong> <a ng-href="#/finish" class="btn btn-success pull-right">Continue to the Final Page!</a>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
     <header class="navbar">
         <div class="container">
-            <h1 class="clearfix mobileShrink"><a href="//digitalstewards.ca" target="_blank"><img src="images/efd53cc9.dsi-logo.png" width="130" class="pull-left" style="padding-right:10px"></a><span>Personal Information Request Service</span></h1>
+            <h1 class="clearfix mobileShrink"><a href="//digitalstewards.ca" target="_blank" title="Digital Stewardship Initiative Home Page"><img src="images/efd53cc9.dsi-logo.png" width="130" class="pull-left" style="padding-right:10px" alt="Digital Stewardship Initiative"></a><span>Personal Information Request&nbsp;Service</span></h1>
         </div>
     </header>
     <div class="container">
@@ -34,5 +46,5 @@
 
     <script src="scripts/8ab80d41.vendor.js"></script>
 
-        <script src="scripts/3a0329aa.scripts.js"></script>
+        <script src="scripts/510da7ac.scripts.js"></script>
 

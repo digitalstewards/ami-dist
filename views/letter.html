@@ -2,9 +2,6 @@
   <div class="col-xs-12 col-sm-4 marb-xs-5">
     <div class="btn btn-default btn-sm btn-block" tabindex="3" ng-enter="previous()" ng-click="previous()"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Back to Account Details</div>
   </div>
-  <div class="col-xs-12 col-sm-offset-3 col-sm-5 marb-xs-5">
-    <div ng-click="startOver()" tabindex="2" ng-enter="startOver()" class="btn btn-sm btn-info pull-right btn-block"><span class="glyphicon glyphicon-flag"></span>&nbsp;Request From Another Company</div>
-  </div>
 </div>
 <h2 class="clearfix">Your Request to {{company.name}}</h2>
 <div class="clearfix row">
@@ -24,13 +21,13 @@
       </div>
   </div>
   <div class="col-xs-12 col-sm-offset-4 col-sm-3 marb-xs-5">
-    <a class="btn marb10 btn-default btn-block" ng-class="{disabled: !company.email}" ng-href="{{email}}" tabindex="1">
-      <span class="glyphicon glyphicon-send"></span>&nbsp;Email Request
+    <a class="btn marb10 btn-primary btn-lg btn-block" ng-class="{disabled: !company.email}" ng-href="{{email}}" tabindex="1" ng-click="showNotice()">
+      <span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;Email Request
     </a>
   </div>
 </div>
 
-<div class="marb10 bg-warning" ng-if="!company.email" style="border-radius:0; padding:7px">No email listed for company privacy officer.</div>
+<div class="marb10 bg-danger" ng-if="!company.email" style="border-radius:0; padding:7px">No email listed for company privacy officer.</div>
 <div class="marb10 bg-info" ng-if="company.email" style="border-radius:0; padding:7px">If email button fails, copy text below and send to: {{company.email}}</div>
 
 <div class="well">
