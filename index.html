@@ -25,7 +25,7 @@
               <div class="row">
                 <div class="col-xs-12 padt10 padb10">
                   <strong style="font-size:1.7em">All Done?</strong>
-                  <a ng-href="#/finish" class="btn btn-success pull-right" ng-click="next()" ng-class="{disabled:nextIsLoading}">
+                  <a ng-href="#/finish" class="btn btn-success pull-right" ng-show="active" ng-click="next()" ng-class="{disabled:nextIsLoading}">
                         <span ui-ladda="nextIsLoading" class="ladda-button" data-style="zoom-in">
                         <span class="glyphicon glyphicon-ok"></span> 
                         </span>
