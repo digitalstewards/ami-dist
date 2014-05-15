@@ -46,7 +46,10 @@
         <div class="row">
             <div class="col-xs-12 centre-xs">
                 <ol class="pagination pagination-sm" ng-controller="ProgressCtrl">
-                  <li ng-class="{disabled: (activeIndex < 1 || previous.restricted)}"><a ng-href="{{previous.path}}"><span><i class="glyphicon glyphicon-chevron-left"></i></span></a></li>
+                  <li ng-class="{disabled: (activeIndex < 1 || previous.restricted)}">
+                    <a ng-href="{{previous.path}}" ng-show="(!previous.restricted)"><span><i class="glyphicon glyphicon-chevron-left"></i></span></a>
+                    <a ng-show="(previous.restricted)"><span><i class="glyphicon glyphicon-chevron-left"></i></span></a>
+                  </li>
                   <li ng-repeat="stage in stages" ng-class="{firstStep: $first, lastStep: $last, disabled: (stage.restricted), active: stage.active, completedPast: (activeIndex > $index)}">
                     <a ng-show="(stage.restricted)">
                         <span class="hidden-xs"><i class="{{stage.icon}}"></i> {{stage.name}}</span>
@@ -57,7 +60,10 @@
                         <span class="visible-xs"><i class="{{stage.icon}}"></i> <strong>{{$index+1}}</strong></span>
                     </a>
                   </li>
-                  <li ng-class="{disabled: (activeIndex == stages.length - 1 || next.restricted)}"><a ng-href="{{next.path}}"><span><i class="glyphicon glyphicon-chevron-right"></i></span></a></li>
+                  <li ng-class="{disabled: (activeIndex == stages.length - 1 || next.restricted)}">
+                    <a ng-href="{{next.path}}" ng-show="(!next.restricted)"><span><i class="glyphicon glyphicon-chevron-right"></i></span></a>
+                    <a ng-show="(next.restricted)"><span><i class="glyphicon glyphicon-chevron-right"></i></span></a>
+                </li>
                 </ol>
             </div>
         </div>
