@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/2d46391d.vendor.css">
-    <link rel="stylesheet" href="styles/d1147345.main.css">
+    <link rel="stylesheet" href="styles/ea1f6487.main.css">
   
   <body ng-app="pirsApp">
     <!--[if lt IE 7]>
@@ -44,9 +44,9 @@
     </header>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12 centre-xs">
                 <ol class="pagination pagination-sm" ng-controller="ProgressCtrl">
-                  <li ng-class="{disabled: activeIndex < 1}"><a href="#"><span><i class="glyphicon glyphicon-chevron-left"></i></span></a></li>
+                  <li ng-class="{disabled: (activeIndex < 1 || previous.restricted)}"><a ng-href="{{previous.path}}"><span><i class="glyphicon glyphicon-chevron-left"></i></span></a></li>
                   <li ng-repeat="stage in stages" ng-class="{firstStep: $first, lastStep: $last, disabled: (stage.restricted), active: stage.active, completedPast: (activeIndex > $index)}">
                     <a ng-show="(stage.restricted)">
                         <span class="hidden-xs"><i class="{{stage.icon}}"></i> {{stage.name}}</span>
@@ -57,7 +57,7 @@
                         <span class="visible-xs"><i class="{{stage.icon}}"></i> <strong>{{$index+1}}</strong></span>
                     </a>
                   </li>
-                  <li ng-class="{disabled: activeIndex == stages.length - 1}"><a ng-href="#"><span><i class="glyphicon glyphicon-chevron-right"></i></span></a></li>
+                  <li ng-class="{disabled: (activeIndex == stages.length - 1 || next.restricted)}"><a ng-href="{{next.path}}"><span><i class="glyphicon glyphicon-chevron-right"></i></span></a></li>
                 </ol>
             </div>
         </div>
@@ -71,5 +71,5 @@
 
     <script src="scripts/8ab80d41.vendor.js"></script>
 
-        <script src="scripts/07170044.scripts.js"></script>
+        <script src="scripts/0ba886f4.scripts.js"></script>
 
