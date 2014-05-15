@@ -47,8 +47,12 @@
             <div class="col-xs-12">
                 <ol class="pagination pagination-sm" ng-controller="ProgressCtrl">
                   <li ng-class="{disabled: activeIndex < 1}"><a href="#"><span><i class="glyphicon glyphicon-chevron-left"></i></span></a></li>
-                  <li ng-repeat="stage in stages" ng-class="{firstStep: $first, lastStep: $last, disabled: (!stage.active && activeIndex < $index), active: stage.active, completedPast: (activeIndex > $index)}">
-                    <a ng-href="{{stage.href}}">
+                  <li ng-repeat="stage in stages" ng-class="{firstStep: $first, lastStep: $last, disabled: (stage.restricted), active: stage.active, completedPast: (activeIndex > $index)}">
+                    <a ng-show="(stage.restricted)">
+                        <span class="hidden-xs"><i class="{{stage.icon}}"></i> {{stage.name}}</span>
+                        <span class="visible-xs"><i class="{{stage.icon}}"></i> <strong>{{$index+1}}</strong></span>
+                    </a>
+                    <a ng-href="{{stage.path}}" ng-show="(!stage.restricted)">
                         <span class="hidden-xs"><i class="{{stage.icon}}"></i> {{stage.name}}</span>
                         <span class="visible-xs"><i class="{{stage.icon}}"></i> <strong>{{$index+1}}</strong></span>
                     </a>
@@ -67,5 +71,5 @@
 
     <script src="scripts/8ab80d41.vendor.js"></script>
 
-        <script src="scripts/f31f7e8b.scripts.js"></script>
+        <script src="scripts/07170044.scripts.js"></script>
 
