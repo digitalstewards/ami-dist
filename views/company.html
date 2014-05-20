@@ -25,6 +25,6 @@
 <span ng-if="!nextIsLoading">Next</span>
 <span ng-if="nextIsLoading">Please Wait...</span>
 &nbsp;
-<span ui-ladda="nextIsLoading" class="ladda-button" data-style="zoom-in"><span class="glyphicon glyphicon-chevron-right"></span></span>
+<i class="fa" ng-class="{'fa-arrow-right': !nextIsLoading, 'fa-spinner': nextIsLoading, rotating: nextIsLoading}"></i>
 </button>
 </form>

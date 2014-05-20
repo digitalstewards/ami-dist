@@ -20,9 +20,7 @@
 </div>
 
 <a ng-href="#/companyInfo" class="btn btn-lg btn-primary" ng-click="next()" ng-class="{disabled:nextIsLoading}">
-<span ui-ladda="nextIsLoading" class="ladda-button" data-style="zoom-in">
-<span class="glyphicon glyphicon-flag"></span> 
-</span>
+<i class="fa" ng-class="{'fa-flag': !nextIsLoading, 'fa-spinner': nextIsLoading, rotating: nextIsLoading}"></i> 
 <span ng-if="!nextIsLoading">&nbsp;Start Now</span>
 <span ng-if="nextIsLoading">&nbsp;Please Wait...</span>
 </a>

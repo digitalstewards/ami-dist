@@ -70,9 +70,9 @@
     </div>
   </div>
   <button class="btn btn-primary" tabindex="1" ng-class="{disabled: (!requiredFieldsFilled() || nextIsLoading)}" ng-click="next()">
-  <span ng-if="!nextIsLoading">Next</span>
-  <span ng-if="nextIsLoading">Please Wait...</span>
-  &nbsp;
-  <span ui-ladda="nextIsLoading" class="ladda-button" data-style="zoom-in"><span class="glyphicon glyphicon-chevron-right"></span></span>
+    <span ng-if="!nextIsLoading">Next</span>
+    <span ng-if="nextIsLoading">Please Wait...</span>
+    &nbsp;
+    <i class="fa" ng-class="{'fa-arrow-right': !nextIsLoading, 'fa-spinner': nextIsLoading, rotating: nextIsLoading}"></i>
   </button>
 </div>
