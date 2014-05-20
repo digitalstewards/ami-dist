@@ -1,15 +1,14 @@
 <!-- <div class="clearfix row">
   <div class="col-xs-12 col-sm-4 marb-xs-5">
-    <div class="btn btn-default btn-sm btn-block" tabindex="3" ng-enter="previous()" ng-click="previous()"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Back to Account Details</div>
+    <div class="btn btn-default btn-sm btn-block" tabindex="3" ng-enter="previous()" ng-click="previous()"><span class="fa fa-chevron-left"></span>&nbsp;Back to Account Details</div>
   </div>
 </div> -->
 <h2 class="clearfix">Your Request to {{company.name}}</h2>
 <div class="clearfix row">
   <div class="col-xs-12 col-sm-5 marb-xs-5">
     <div class="btn btn-lg marb10 marb-xs-5 btn-block generatorBtn" ng-class="{disabled:letter.isGenerating, 'btn-success':letter.isGenerated, 'btn-primary': !letter.isGenerated}" ng-click="save()" ng-enter="save()" tabindex="1">
-      <span ui-ladda="letter.isGenerating" class="ladda-button" data-style="zoom-in">
-        <span class="glyphicon glyphicon-save"></span> 
-      </span><span ng-show="!letter.isGenerating && !letter.isGenerated">
+        <span class="fa" ng-class="{'fa-file-pdf-o': !nextIsLoading, 'fa-spinner': nextIsLoading, rotating: nextIsLoading}"></span> 
+      <span ng-show="!letter.isGenerating && !letter.isGenerated">
          &nbsp;Generate Letter (PDF)
         </span>
         <span ng-show="letter.isGenerating && !letter.isGenerated">
@@ -22,7 +21,7 @@
   </div>
   <div class="col-xs-12 col-sm-offset-4 col-sm-3 marb-xs-5">
     <a class="btn marb10 btn-primary btn-lg btn-block" ng-class="{disabled: !company.email}" ng-href="{{email}}" tabindex="1" ng-click="showNotice()">
-      <span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;Email Request
+      <span class="fa fa-send"></span>&nbsp;&nbsp;Email Request
     </a>
   </div>
 </div>
