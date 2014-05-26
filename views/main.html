@@ -1,26 +1,34 @@
 <h2>Welcome</h2>
 <p>This service makes it easier for customers of Canadian companies to request for a copy of their personal information, as is their right under the <a href="http://www.priv.gc.ca/leg_c/leg_c_p_e.asp" target="_blank">PIPEDA Act</a>.</p>
+<p>Simply fill out the form, and either print and mail in the generated letter, or email it to the company.</p>
 
-<h1 ng-if="show">SHOW!!!</h1>
-<div class="well">
-<h3>What is a PIPEDA request?</h3>
-<p>Lorem ipsum</p>
-
-<h3>Why should I care?</h3>
-<p>Lorem ipsum</p>
-
-<h3>OK, what do I have to do?</h3>
-<p>Just fill out the form and generate a PDF letter, which you'll then mail to the indicated address via snail mail. If the company in question has a listed email address for a privacy officer, you'll also be able to send your letter electronically. We recommend a physical letter, as it currently carries more authority.</p>
-
-<h3>Why a letter?</h3>
-<p>Lorem ipsum</p>
-
-<h3>Does this tool collect my personal information?</h3>
-<p><strong>No</strong>, this tool has been designed to run <strong>entirely within your web browser</strong>. The information you input into the form stays on your computer; <strong>we have no idea who you are, and want to keep it that way</strong>!</p>
-</div>
-
+<div class="marb10">
 <a ng-href="#/companyInfo" class="btn btn-lg btn-primary" ng-click="next()" ng-class="{disabled:nextIsLoading}">
 <i class="fa" ng-class="{'fa-flag': !nextIsLoading, 'fa-spinner': nextIsLoading, rotating: nextIsLoading}"></i> 
 <span ng-if="!nextIsLoading">&nbsp;Start Now</span>
 <span ng-if="nextIsLoading">&nbsp;Please Wait...</span>
 </a>
+</div>
+
+<div class="well clearfix mart10">
+	<a ng-if="!show" class="pull-right btn btn-info" ng-click="showToggle()">Show FAQ <i class="fa fa-chevron-down"></i></a>
+	<a ng-if="show" class="pull-right btn btn-info" ng-click="showToggle()">Hide FAQ <i class="fa fa-chevron-up"></i></a>
+	<h3 ng-click="">Frequently Asked Questions</h3>
+	<div ng-if="show">
+		<hr>
+		<h4>What is a PIPEDA request?</h4>
+		<p>Lorem ipsum</p>
+
+		<h4>Why should I care?</h4>
+		<p>Lorem ipsum</p>
+
+		<h4>OK, what do I have to do?</h4>
+		<p>Just fill out the form and generate a PDF letter, which you'll then mail to the indicated address via snail mail. If the company in question has a listed email address for a privacy officer, you'll also be able to send your letter electronically. We recommend a physical letter, as it currently carries more authority.</p>
+
+		<h4>Why a letter?</h4>
+		<p>Lorem ipsum</p>
+
+		<h4>Does this tool collect my personal information?</h4>
+		<p><strong>No</strong>, this tool has been designed to run <strong>entirely within your web browser</strong>. The information you input into the form stays on your computer; <strong>we have no idea who you are, and want to keep it that way</strong>!</p>
+	</div>
+</div>

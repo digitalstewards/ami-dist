@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/0edf7a2c.vendor.css">
-    <link rel="stylesheet" href="styles/904342de.main.css">
+    <link rel="stylesheet" href="styles/ebd4174b.main.css">
   
   <body ng-app="pirsApp">
     <!--[if lt IE 7]>
@@ -18,25 +18,6 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-controller="NoticeCtrl">
-        <div style="padding-top:54px" class="animateAble" ng-class="{animateDown: active}"></div>
-        <div class="navbar navbar-fixed-top sticky-notice bg-success animateAble" ng-class="{animateDown: active}">
-            <div class="container">
-              <div class="row">
-                <div class="col-xs-12 padt10 padb10">
-                  <strong style="font-size:1.7em">All Done?</strong>
-                  <a ng-href="#/finish" class="btn btn-success pull-right" ng-click="next()" ng-class="{disabled:nextIsLoading}">
-                        <span ui-ladda="nextIsLoading" class="ladda-button" data-style="zoom-in">
-                        <span class="glyphicon glyphicon-ok"></span> 
-                        </span>
-                        <span ng-if="!nextIsLoading">&nbsp;Continue to the Final Page!</span>
-                        <span ng-if="nextIsLoading">&nbsp;Please Wait...</span>
-                    </a>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
     <header class="navbar">
         <div class="container">
             <h1 class="clearfix mobileShrink"><a href="//digitalstewards.ca" target="_blank" title="Digital Stewardship Initiative Home Page"><img src="images/efd53cc9.dsi-logo.png" width="130" class="pull-left" style="padding-right:10px" alt="Digital Stewardship Initiative"></a><span>Personal Information Request&nbsp;Service</span></h1>
@@ -51,11 +32,11 @@
                     <a ng-show="(previous.restricted)"><span><i class="fa fa-arrow-left"></i></span></a>
                   </li>
                   <li ng-repeat="stage in stages" ng-class="{firstStep: $first, lastStep: $last, disabled: (stage.restricted), active: stage.selected, completedPast: stage.pastSelected}">
-                    <a ng-show="(stage.restricted)">
+                    <a class="{{stage.className}}" ng-show="(stage.restricted)">
                         <span class="hidden-xs"><i ng-class="stageIcon(stage)"></i> {{stage.name}}</span>
                         <span class="visible-xs"><i ng-class="stageIcon(stage)"></i> <strong>{{$index+1}}</strong></span>
                     </a>
-                    <a ng-href="{{stage.path}}" ng-show="(!stage.restricted)">
+                    <a class="{{stage.className}}" ng-href="{{stage.path}}" ng-show="(!stage.restricted)">
                         <span class="hidden-xs"><i ng-class="stageIcon(stage)"></i> {{stage.name}}</span>
                         <span class="visible-xs"><i ng-class="stageIcon(stage)"></i> <strong>{{$index+1}}</strong></span>
                     </a>
@@ -68,6 +49,10 @@
             </div>
         </div>
         <div ng-view=""></div>
+        <footer class="small mart10 marb10">
+            <p class="bg-warning p-bg"><strong>Privacy Statement</strong>: This service does not collect any of the personal information you provide. It is only used to generate a letter, which is done entirely in your web browser. Other web pages linked to herein will be goverened by different policies. When you load the service, the server logs a record of that event. These logs include the IP address used to access each resource required for the service, the time of access, and several other non-identifying metadata fields.</p>
+            <p class="bg-warning p-bg"><strong>Disclaimer</strong>: These materials do not constitute solicitation or provision of legal advice. <strong>You are solely responsible for your use of this service and any resulting consequences</strong>. The Digital Stewardship Initiative (DSI) partners and contributors make no claims, promises, or guarantees about the accuracy, completeness, or adequacy of the information contained in this document. This software is offered as-is, with no warranty. Nothing herein should be used as a substitute for the legal advice of competent counsel.</p>
+        </footer>
     </div>
 
     <!--[if lt IE 9]>
@@ -77,5 +62,5 @@
 
     <script src="scripts/f23dc3c4.vendor.js"></script>
 
-        <script src="scripts/5cee35b2.scripts.js"></script>
+        <script src="scripts/f974701b.scripts.js"></script>
 
