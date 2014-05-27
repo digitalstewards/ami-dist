@@ -31,5 +31,13 @@
 		<hr>
 		<h4>Does this tool collect my personal information?</h4>
 		<p><strong>No</strong>, this tool has been designed to run <strong>entirely within your web browser</strong>. The information you input into the form stays on your computer; <strong>we have no idea who you are, and want to keep it that way</strong>!</p>
+		<hr>
+		<p>
+			<a ng-href="#/companyInfo" class="btn btn-primary" ng-click="next()" ng-class="{disabled:nextIsLoading}">
+			<i class="fa" ng-class="{'fa-flag': !nextIsLoading, 'fa-spinner': nextIsLoading, rotating: nextIsLoading}"></i> 
+			<span ng-if="!nextIsLoading">&nbsp;Start Now</span>
+			<span ng-if="nextIsLoading">&nbsp;Please Wait...</span>
+			</a>
+		</p>
 	</div>
 </div>
