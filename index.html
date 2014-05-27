@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/0edf7a2c.vendor.css">
-    <link rel="stylesheet" href="styles/f3f27b77.main.css">
+    <link rel="stylesheet" href="styles/d8dde1b9.main.css">
   
   <body ng-app="pirsApp">
     <!--[if lt IE 7]>
@@ -24,14 +24,14 @@
         </div>
     </header>
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12 centre-xs">
+        <div class="row" sticky="" use-placeholder="" id="mainNav">
+            <nav class="col-xs-12 centre-xs">
                 <ol class="pagination pagination-sm" ng-controller="ProgressCtrl" ng-class="flexProgress">
                   <li ng-class="{disabled: (activeIndex < 1 || previous.restricted)}">
                     <a ng-href="{{previous.path}}" ng-show="(!previous.restricted)"><span><i class="fa fa-arrow-left"></i></span></a>
                     <a ng-show="(previous.restricted)"><span><i class="fa fa-arrow-left"></i></span></a>
                   </li>
-                  <li ng-repeat="stage in stages" ng-class="{firstStep: $first, lastStep: $last, disabled: (stage.restricted), active: stage.selected, completedPast: stage.pastSelected, fadeBg: ($last && next === stage)}">
+                  <li ng-repeat="stage in stages" ng-class="{firstStep: $first, lastStep: $last, disabled: (stage.restricted), active: stage.selected, completedPast: stage.pastSelected, fadeBg: ($last && next === stage && activeIndex !== stages.length - 1)}">
                     <a class="{{stage.className}}" ng-show="(stage.restricted)">
                         <span class="hidden-xs"><i ng-class="stageIcon(stage)"></i> {{stage.name}}</span>
                         <span class="visible-xs"><i ng-class="stageIcon(stage)"></i> <strong>{{$index+1}}</strong></span>
@@ -46,7 +46,7 @@
                     <a ng-show="(next.restricted)"><span><i ng-class="arrowIcon(next)" class="fa fa-arrow-right"></i></span></a>
                 </li>
                 </ol>
-            </div>
+            </nav>
         </div>
         <div ng-view="" class="marb10"></div>
         <footer class="small mart10 clearfix">
@@ -62,5 +62,5 @@
 
     <script src="scripts/f23dc3c4.vendor.js"></script>
 
-        <script src="scripts/84ee13e5.scripts.js"></script>
+        <script src="scripts/0eac39d1.scripts.js"></script>
 
