@@ -4,7 +4,7 @@
   </div>
 </div> -->
 <h2 class="clearfix">Your Request to {{company.name}}</h2>
-<p class="p-bg bg-success"><strong>Please read over the generated letter carefully</strong>. Print your letter by first generating a PDF with the below button. Put it in an envelope and mail to: 
+<p class="p-bg bg-success"><strong>Please read over the generated letter carefully</strong>. Then, <strong>print your letter</strong> by first generating a PDF with the below button. Put it in an envelope and mail to: 
 <div class="clearfix row">
   <address class="small col-xs-12 col-sm-11 col-sm-offset-1">
     <strong>{{company.name}} {{company.contactActor.title}}</strong>
@@ -14,7 +14,7 @@
     <br>{{company.address.postalcode}}
   </address>
 </div>
-<span class="p-bg bg-info" ng-if="company.email">Alternatively, you can email it to the company by hitting the email button or if that doesn't work, copying and pasting the letter below and sending to {{company.email}}.</span></p>
+<span class="p-bg bg-info" ng-if="company.email">Alternatively, you can email it to the company by hitting the email button or if that doesn't work, copying and pasting the letter below and sending to <strong>{{company.email}}</strong>.</span></p>
 <div class="clearfix row">
   <div class="col-xs-12 col-sm-5 marb-xs-5">
     <div class="btn btn-lg marb10 marb-xs-5 btn-block generatorBtn" ng-class="{disabled:letter.isGenerating, 'btn-success':letter.isGenerated, 'btn-primary': !letter.isGenerated}" ng-click="save()" ng-enter="save()" tabindex="1">
