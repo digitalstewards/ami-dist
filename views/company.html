@@ -1,7 +1,8 @@
 <!-- <div class="btn btn-default marb10" ng-click="previous()" ng-enter="previous()" tabindex="2"><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Back to Overview</div> -->
 <h2>Your Telecommunications Service Providers</h2>
-<p>Begin creating your request by selecting a company that provides you telecommunications services (internet, landline, or mobile telephone). You're entitled to do this for all companies that provide you such services.</p>
 <form>
+  <fieldset>
+<legend class="clearfix bg-info p-bg"><span class="va-mid text-center col-xs-1"><i class="fa fa-briefcase bigIcon"></i></span><p class="va-mid col-xs-11"><strong>Begin creating your request</strong> by selecting a company that provides you telecommunications services (internet, landline, or mobile telephone). You're entitled to do this for all companies that provide you such services.</p></legend>
 <div class="well">
   <h3><label for="company">Company <span class="required">*</span></label></h3>
   <div class="row">
@@ -27,4 +28,5 @@
 &nbsp;
 <i class="fa" ng-class="{'fa-arrow-right': !nextIsLoading, 'fa-spinner': nextIsLoading, rotating: nextIsLoading}"></i>
 </button>
+</fieldset>
 </form>

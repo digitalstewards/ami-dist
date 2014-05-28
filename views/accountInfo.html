@@ -1,6 +1,8 @@
 <!-- <div class="btn btn-default" ng-click="previous()" ng-enter="previous()" tabindex="2"><span class="glyphicon glyphicon-chevron-left"></span> Back to Your Information</div> -->
 <h2>Account Details for your {{company.name}} services</h2>
-<p>Your account details help {{company.name}} identify the information it manages that pertains to you. This information can typically be found on your monthly invoice, or in your service's online account management portal.</p>
+<form>
+<fieldset>
+<legend class="clearfix bg-info p-bg"><span class="va-mid text-center col-xs-1"><i class="fa fa-barcode bigIcon"></i></span><p class="va-mid col-xs-11"><strong>Your account number</strong> and other details help {{company.name}} identify the information it manages that pertains to you. This information can typically be found on your monthly invoice, or in your service's online account management portal.</p></legend>
 <div ng-show="!oneService">
   <div class="checkbox">
       <label ng-class="{'bg-success': companyService.selected}">
@@ -77,3 +79,5 @@
     <i class="fa" ng-class="{'fa-arrow-right': !nextIsLoading, 'fa-spinner': nextIsLoading, rotating: nextIsLoading}"></i>
   </button>
 </div>
+</fieldset>
+</form>
