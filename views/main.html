@@ -1,6 +1,6 @@
 <h2>Request access to your personal&nbsp;information.</h2>
 <p>The Canadian law <a href="http://www.priv.gc.ca/resource/fs-fi/02_05_d_54_ati_02_e.asp" target="_blank">PIPEDA</a> obliges Canadian companies to provide access to the personal information they hold on you, if you send them a formal request.
-</p><p><strong>To create your request</strong>, simply follow the steps to fill out a form, and either print and mail in the generated letter, or email it to the company.</p>
+</p><p><strong>To create your request</strong>, simply follow the steps to fill out a form, and either <strong>print the letter</strong> and mail it through the post, or <em>if the company privacy officer's email address is available</em>, <strong>email it</strong>.</p>
 
 <div class="clearfix mart10 marb10">
 	<a ng-href="#/companyInfo" class="btn btn-lg btn-primary" ng-click="next()" ng-class="{disabled:nextIsLoading}">
@@ -9,11 +9,10 @@
 	<span ng-if="nextIsLoading">&nbsp;Please Wait...</span>
 	</a>
 </div>
-
 <div class="well clearfix mart10">
 	<a ng-if="!show" class="pull-right btn btn-info" ng-click="showToggle()">Show FAQ <i class="fa fa-chevron-down"></i></a>
 	<a ng-if="show" class="pull-right btn btn-info" ng-click="showToggle()">Hide FAQ <i class="fa fa-chevron-up"></i></a>
-	<h3 ng-click="">Frequently Asked Questions</h3>
+	<h3>Frequently Asked Questions</h3>
 	<div ng-if="show">
 		<hr>
 		<h4>What is a PIPEDA request?</h4>

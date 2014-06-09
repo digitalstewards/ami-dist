@@ -3,41 +3,63 @@
     <div class="btn btn-default btn-sm btn-block" tabindex="3" ng-enter="previous()" ng-click="previous()"><span class="fa fa-chevron-left"></span>&nbsp;Back to Account Details</div>
   </div>
 </div> -->
-<h2 class="clearfix">Your Request to {{company.name}}</h2>
-<p class="p-bg bg-success"><strong>Please read over the generated letter carefully</strong>. Then, <strong>print your letter</strong> by first generating a PDF with the below button. Put it in an envelope and mail to: 
-<div class="clearfix row">
-  <address class="small col-xs-12 col-sm-11 col-sm-offset-1">
-    <strong>{{company.name}} {{company.contactActor.title}}</strong>
-    <br>{{company.address.address1}}
-    <br ng-if="company.address.address2">{{company.address.address2}}
-    <br>{{company.address.city}}, {{company.address.province}}
-    <br>{{company.address.postalcode}}
-  </address>
-</div>
-<span class="p-bg bg-info" ng-if="company.email">Alternatively, you can email it to the company by hitting the email button or if that doesn't work, copying and pasting the letter below and sending to <strong>{{company.email}}</strong>.</span></p>
-<div class="clearfix row">
-  <div class="col-xs-12 col-sm-5 marb-xs-5">
-    <div class="btn btn-lg marb10 marb-xs-5 btn-block generatorBtn" ng-class="{disabled:letter.isGenerating, 'btn-success':letter.isGenerated, 'btn-primary': !letter.isGenerated}" ng-click="save()" ng-enter="save()" tabindex="1">
-        <span class="fa" ng-class="{'fa-file-pdf-o': !nextIsLoading, 'fa-spinner': nextIsLoading, rotating: nextIsLoading}"></span> 
-      <span ng-show="!letter.isGenerating && !letter.isGenerated">
-         &nbsp;Generate Letter (PDF)
-        </span>
-        <span ng-show="letter.isGenerating && !letter.isGenerated">
-          &nbsp;Please Wait
-        </span>
-        <span ng-show="!letter.isGenerating && letter.isGenerated">
-          &nbsp;Re-save Letter
-        </span>
+<div>
+  <h2 class="clearfix">Your Request to {{company.name}}</h2>
+  <div class="clearfix mart10 marb10">
+    <div class="pull-right btn btn-info btn-sm" ng-if="(displayInstructions && letterDoneState)" ng-click="instructionsDisplayToggle()">Hide Instructions <i class="fa fa-chevron-up"></i></div>
+    <div class="pull-right btn btn-info btn-sm" ng-if="(!displayInstructions && letterDoneState)" ng-click="instructionsDisplayToggle()">Show Instructions <i class="fa fa-chevron-down"></i></div>
+  </div>
+  </div>
+  <div class="clearfix" ng-if="(!letterDoneState || displayInstructions)">
+  <p class="p-bg bg-success"><strong>Please read over the generated letter carefully</strong>. Then, <strong>print your letter</strong> by first generating a PDF with the below button. Put it in an envelope and mail to: 
+  <div class="clearfix row">
+    <address class="small col-xs-12 col-sm-11 col-sm-offset-1">
+      <strong>{{company.name}} {{company.contactActor.title}}</strong>
+      <br>{{company.address.address1}}
+      <br ng-if="company.address.address2">{{company.address.address2}}
+      <br>{{company.address.city}}, {{company.address.province}}
+      <br>{{company.address.postalcode}}
+    </address>
+  </div>
+  <span class="p-bg bg-info" ng-if="company.email">Alternatively, you can email it to the company by hitting the email button or if that doesn't work, copying and pasting the letter below and sending to <strong>{{company.email}}</strong>.</span>
+  <span class="marb10 bg-danger p-bg" ng-if="!company.email">No email listed for company privacy officer.</span>
+  </p>
+  </div>
+  <div class="clearfix row" ng-class="{faded: (letterDoneState && !displayInstructions)}">
+    <div class="col-xs-12 col-sm-5 marb-xs-5">
+      <div class="btn btn-lg marb10 marb-xs-5 btn-block generatorBtn" ng-class="{disabled:letter.isGenerating, 'btn-success':letter.isGenerated, 'btn-primary': !letter.isGenerated}" ng-click="save()" ng-enter="save()" tabindex="1">
+          <span class="fa" ng-class="{'fa-file-pdf-o': !nextIsLoading, 'fa-spinner': nextIsLoading, rotating: nextIsLoading}"></span> 
+        <span ng-show="!letter.isGenerating && !letter.isGenerated">
+           &nbsp;Generate Letter (PDF)
+          </span>
+          <span ng-show="letter.isGenerating && !letter.isGenerated">
+            &nbsp;Please Wait
+          </span>
+          <span ng-show="!letter.isGenerating && letter.isGenerated">
+            &nbsp;Re-save Letter
+          </span>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-offset-4 col-sm-3 marb-xs-5">
+      <a class="btn marb10 btn-primary btn-lg btn-block" ng-class="{disabled: !company.email}" ng-href="{{email}}" tabindex="1" ng-click="emailClick()" ng-mouseenter="emailBtnHover = true" ng-mouseleave="emailBtnHover = false">
+        <span class="fa fa-send"></span>&nbsp;&nbsp;Email Request
+      </a>
+      <div class="tooltip-container" ng-if="(displayEmailExtras && emailBtnHover)">
+        <div class="tooltip bottom">
+          <div class="tooltip-arrow"></div>
+          <div class="tooltip-inner">
+            Problem? Simply copy &amp; paste the below text into your email client and send to {{company.email}}
+          </div>
+        </div>
       </div>
+    </div>
   </div>
-  <div class="col-xs-12 col-sm-offset-4 col-sm-3 marb-xs-5">
-    <a class="btn marb10 btn-primary btn-lg btn-block" ng-class="{disabled: !company.email}" ng-href="{{email}}" tabindex="1" ng-click="showNotice()">
-      <span class="fa fa-send"></span>&nbsp;&nbsp;Email Request
-    </a>
-  </div>
-</div>
 
-<div class="marb10 bg-danger p-bg" ng-if="!company.email">No email listed for company privacy officer.</div>
+<div class="clearfix p-bg p-bg-l bg-success mart10 marb10" ng-if="letterDoneState">
+  <h2 class="mart0">Thanks for creating your letter!</h2>
+  <div class="marb10">sdsfdf</div>
+  <a class="btn btn-primary btn-xl btn-block" href="https://openmedia.ca/yourdata/reminder">Continue to help out research&nbsp;<i class="fa fa-external-link"></i></a>
+</div>
 
 <div class="well">
   <div id="richLetter">
@@ -132,4 +154,9 @@
 
   <p style="margin:12pt 0 0 0">Sincerely,</p>
   <p style="margin:50pt 0 0 0">{{customer.firstName}} {{customer.lastName}}</p>
+</div>
+<div class="clearfix p-bg p-bg-l bg-success mart10 marb10">
+  <h2 class="mart0">Thanks for creating your letter!</h2>
+  <div class="marb10">sdsfdf</div>
+  <a class="btn btn-primary btn-xl btn-block" href="https://openmedia.ca/yourdata/reminder">Continue to help out research&nbsp;<i class="fa fa-external-link"></i></a>
 </div>
