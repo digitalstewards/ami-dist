@@ -11,7 +11,8 @@
   </div>
   </div>
   <div class="clearfix" ng-if="(!letterDoneState || displayInstructions)">
-  <p class="p-bg bg-success"><strong>Please read over the generated letter carefully</strong>. Then, <strong>print your letter</strong> by first generating a PDF with the below button. Put it in an envelope and mail to: 
+  <p><strong>Please read over the generated letter carefully!</strong></p>
+  <p class="p-bg bg-success"><strong class="bigger">Option 1:</strong> Print your letter by first generating a PDF with the below button. Put it in an envelope and mail to: 
   <div class="clearfix row">
     <address class="small col-xs-12 col-sm-11 col-sm-offset-1">
       <strong>{{company.name}} {{company.contactActor.title}}</strong>
@@ -21,7 +22,7 @@
       <br>{{company.address.postalcode}}
     </address>
   </div>
-  <span class="p-bg bg-info" ng-if="company.email">Alternatively, you can email it to the company by hitting the email button or if that doesn't work, copying and pasting the letter below and sending to <strong>{{company.email}}</strong>.</span>
+  <span class="p-bg bg-info" ng-if="company.email"><strong class="bigger">Option 2: </strong> Email your letter to the company by hitting the email button or if that doesn't work, copying and pasting the letter below and sending to <strong>{{company.email}}</strong>.</span>
   <span class="marb10 bg-danger p-bg" ng-if="!company.email">No email listed for company privacy officer.</span>
   </p>
   </div>
@@ -56,9 +57,8 @@
   </div>
 
 <div class="clearfix p-bg p-bg-l bg-success mart10 marb10" ng-if="letterDoneState">
-  <h2 class="mart0">Thanks for creating your letter!</h2>
-  <div class="marb10">sdsfdf</div>
-  <a class="btn btn-primary btn-xl btn-block" href="https://openmedia.ca/yourdata/reminder">Continue to help out research&nbsp;<i class="fa fa-external-link"></i></a>
+  <h2 class="mart0 marb10">Thanks for creating your letter!</h2>
+  <a class="btn btn-primary btn-xl btn-block" href="https://openmedia.ca/myinfo/reminder">Continue on to maximize your impact&nbsp;<i class="fa fa-external-link"></i></a>
 </div>
 
 <div class="well">
@@ -156,7 +156,6 @@
   <p style="margin:50pt 0 0 0">{{customer.firstName}} {{customer.lastName}}</p>
 </div>
 <div class="clearfix p-bg p-bg-l bg-success mart10 marb10">
-  <h2 class="mart0">Thanks for creating your letter!</h2>
-  <div class="marb10">sdsfdf</div>
-  <a class="btn btn-primary btn-xl btn-block" href="https://openmedia.ca/yourdata/reminder">Continue to help out research&nbsp;<i class="fa fa-external-link"></i></a>
+  <h2 class="mart0 marb10">Thanks for creating your letter!</h2>
+  <a class="btn btn-primary btn-xl btn-block" href="https://openmedia.ca/myinfo/reminder">Continue on to maximize your impact&nbsp;<i class="fa fa-external-link"></i></a>
 </div>
