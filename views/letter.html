@@ -22,6 +22,7 @@
           <br ng-if="company.address.address2">{{company.address.address2}}
           <br>{{company.address.city}}, {{company.address.province}}
           <br>{{company.address.postalcode}}
+          <div ng-if="company.email" class="mart5">Or email to: {{company.email}}</div>
         </address>
       </div>
     </div>
