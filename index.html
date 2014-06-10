@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="stylesheet" href="styles/0edf7a2c.vendor.css">
-    <link rel="stylesheet" href="styles/fc5d2bee.main.css">
+    <link rel="stylesheet" href="styles/db8f62bf.main.css">
   
   <body ng-app="pirsApp">
     <!--[if lt IE 7]>
@@ -41,7 +41,7 @@
                         <span class="hidden-xs"><i ng-class="stageIcon(stage)"></i> {{stage.name}}</span>
                         <span class="visible-xs"><i ng-class="stageIcon(stage)"></i> <strong>{{$index+1}}</strong></span>
                     </a>
-                    <a class="{{stage.className}}" ng-href="{{stage.path}}" ng-show="(!stage.restricted)">
+                    <a class="{{stage.className}}" ng-href="{{stage.path}}" target="{{stage.target}}" ng-show="(!stage.restricted)">
                         <span class="hidden-xs"><i ng-class="stageIcon(stage)"></i> {{stage.name}}</span>
                         <span class="visible-xs"><i ng-class="stageIcon(stage)"></i> <strong>{{$index+1}}</strong></span>
                     </a>
@@ -67,5 +67,5 @@
 
     <script src="scripts/9e794088.vendor.js"></script>
 
-    <script src="scripts/fab37df0.scripts.js"></script>
+    <script src="scripts/ff8e4259.scripts.js"></script>
 
