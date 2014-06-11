@@ -126,6 +126,10 @@
             },
             "services":[
                {
+                  "name":"Mobility",
+                  "serviceType":"mobile"
+               },
+               {
                   "name":"Internet",
                   "serviceType":"internet"
                },
@@ -152,6 +156,10 @@
             },
             "services":[
                {
+                  "name":"Mobility",
+                  "serviceType":"mobile"
+               },
+               {
                   "name":"Internet",
                   "serviceType":"internet"
                },
@@ -176,6 +184,10 @@
                "title":"Privacy Officer"
             },
             "services":[
+               {
+                  "name":"Mobility",
+                  "serviceType":"mobile"
+               },
                {
                   "name":"Internet",
                   "serviceType":"internet"
@@ -202,8 +214,16 @@
             },
             "services":[
                {
-                  "name":"Fido Mobile Phone",
+                  "name":"Mobility",
                   "serviceType":"mobile"
+               },
+               {
+                  "name":"Internet",
+                  "serviceType":"internet"
+               },
+               {
+                  "name":"Home Phone",
+                  "serviceType":"telephone"
                }
             ]
          },
@@ -223,11 +243,15 @@
             },
             "services":[
               {
-                  "name":"IP Connectivity",
+                  "name":"Mobility",
+                  "serviceType":"mobile"
+               },
+               {
+                  "name":"Internet",
                   "serviceType":"internet"
                },
                {
-                  "name":"Voice Services",
+                  "name":"Home Phone",
                   "serviceType":"telephone"
                }
             ]
@@ -247,7 +271,7 @@
             },
             "services":[
                {
-                  "name":"Wireless",
+                  "name":"Mobility",
                   "serviceType":"mobile"
                },
                {
@@ -275,15 +299,15 @@
             },
             "services":[
                {
-                  "name":"Rogers Wireless",
+                  "name":"Mobility",
                   "serviceType":"mobile"
                },
                {
-                  "name":"Rogers Internet",
+                  "name":"Internet",
                   "serviceType":"internet"
                },
                {
-                  "name":"Rogers Home Phone",
+                  "name":"Home Phone",
                   "serviceType":"telephone"
                }
             ]
@@ -305,7 +329,7 @@
             },
             "services":[
                {
-                  "name":"Wireless",
+                  "name":"Mobility",
                   "serviceType":"mobile"
                },
                {
@@ -334,6 +358,10 @@
             },
             "services":[
                {
+                  "name":"Mobility",
+                  "serviceType":"mobile"
+               },
+               {
                   "name":"Internet",
                   "serviceType":"internet"
                },
@@ -358,6 +386,10 @@
                "title":"Privacy Ombudsman"
             },
             "services":[
+               {
+                  "name":"Mobility",
+                  "serviceType":"mobile"
+               },
                {
                   "name":"Internet",
                   "serviceType":"internet"
@@ -384,8 +416,16 @@
             },
             "services":[
                {
-                  "name":"Wireless",
+                  "name":"Mobility",
                   "serviceType":"mobile"
+               },
+               {
+                  "name":"Internet",
+                  "serviceType":"internet"
+               },
+               {
+                  "name":"Home Phone",
+                  "serviceType":"telephone"
                }
             ]
          },
@@ -406,7 +446,7 @@
             },
             "services":[
                {
-                  "name":"Wireless",
+                  "name":"Mobility",
                   "serviceType":"mobile"
                },
                {
@@ -436,8 +476,16 @@
             },
             "services":[
                {
-                  "name":"Wireless",
+                  "name":"Mobility",
                   "serviceType":"mobile"
+               },
+               {
+                  "name":"Internet",
+                  "serviceType":"internet"
+               },
+               {
+                  "name":"Home Phone",
+                  "serviceType":"telephone"
                }
             ]
          },
@@ -457,8 +505,16 @@
             },
             "services":[
                {
+                  "name":"Mobility",
+                  "serviceType":"mobile"
+               },
+               {
                   "name":"Internet",
                   "serviceType":"internet"
+               },
+               {
+                  "name":"Home Phone",
+                  "serviceType":"telephone"
                }
             ]
          }
